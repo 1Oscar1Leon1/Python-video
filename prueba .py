@@ -25,26 +25,14 @@ class Item:
     def calculate_total_price(self):
         return self.price * self.quantity
 
+    def apply_discount(self):
+        self.price = self.price * Item.pay_rate
+
 
 item1 = Item("Phone",100,1)
-item2 = Item("Laptop",1000,3)
-
-'''print(item1.calculate_total_price())
-print(item2.calculate_total_price())'''
-
-'''print(Item.pay_rate)
-print(item1.pay_rate)
-print(item2.pay_rate)'''
-
-print(Item.__dict__) #All the attibutes for Class level
-print(item1.__dict__) #All the atributes for instance level
+item1.apply_discount()
+print(item1.price)
 
 
-'''print(type(item1)) #item
-print(type(item1.name)) #str
-print(type(item1.price)) #int
-print(type(item1.quantity)) #int'''
 
-'''random_str = "aaa"
-print(random_str.upper())'''
 
